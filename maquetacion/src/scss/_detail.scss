@@ -1,0 +1,25 @@
+.detail {
+  box-shadow: 1px 10px 30px 1px rgba(0,0,0,0.2);
+  margin: 0.5rem;
+  max-width: 300px;
+  padding: 1rem;
+  width: 100%;
+
+  &__genre {
+    font-size: 1.2rem;
+  }
+
+  &__header {
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+  }
+
+  &__author,
+  &__editorial,
+  &__year {
+    margin: 0.75rem 0;
+  }
+}
