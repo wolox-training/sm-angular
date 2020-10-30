@@ -1,3 +1,15 @@
+@import 'colors';
+
+%text-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+%text-content {
+  font-size: 20px;
+  color: $grey-light;
+}
+
 .detail {
   background-color: #FFF;
   box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.5);
@@ -7,12 +19,47 @@
   padding: 24px;
   width: 100%;
 
+  &__author-title {
+    @extend %text-title;
+  }
+
+  &__author-content {
+    @extend %text-content;
+  }
+
+  &__book-genre {
+    color: $grey-light;
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 700;
+    height: 30px;
+    line-height: 28px;
+    width: 98px;
+  }
+
+  &__book-title {
+    font-size: 32px;
+    font-weight: 700;
+    height: 39px;
+    line-height: 38px;
+    width: 210px;
+  }
+
   &__content {
     width: 100%;
   }
 
   &__cover {
     margin-right: 52px;
+    position: relative;
+  }
+
+  &__cover-badge {
+    left: 200px;
+    position: absolute;
+    top: -15px;
+    transform: rotate(15deg);
+    width: 90px;
   }
 
   &__cover-img {
@@ -20,13 +67,12 @@
     width: 261px;
   }
 
-  &__genre {
-    height: 30px;
-    width: 98px;
-    font-family: Roboto;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 28px;
+  &__editorial-title {
+    @extend %text-title;
+  }
+
+  &__editorial-content {
+    @extend %text-content;
   }
 
   &__header {
@@ -34,12 +80,12 @@
     border-bottom: 4px solid #BED23C;
   }
 
-  &__title {
-    height: 39px;
-    width: 210px;
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 38px;
+  &__year-title {
+    @extend %text-title;
+  }
+
+  &__year-content {
+    @extend %text-content;
   }
 
   &__author,
