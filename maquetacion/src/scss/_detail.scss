@@ -6,18 +6,18 @@
 }
 
 %text-content {
-  font-size: 20px;
   color: $grey-light;
+  font-size: 20px;
 }
 
 .detail {
   background-color: #FFF;
   box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.5);
   display: flex;
-  height: 416px;
   max-width: 900px;
   padding: 24px;
   width: 100%;
+  margin: 50px 0;
 
   &__author-title {
     @extend %text-title;
@@ -32,16 +32,12 @@
     font-family: Roboto;
     font-size: 24px;
     font-weight: 700;
-    height: 30px;
-    line-height: 28px;
     width: 98px;
   }
 
   &__book-title {
     font-size: 32px;
     font-weight: 700;
-    height: 39px;
-    line-height: 38px;
     width: 210px;
   }
 
@@ -55,7 +51,7 @@
   }
 
   &__cover-badge {
-    left: 200px;
+    right: -30px;
     position: absolute;
     top: -15px;
     transform: rotate(15deg);
@@ -63,7 +59,6 @@
   }
 
   &__cover-img {
-    height: 368px;
     width: 261px;
   }
 

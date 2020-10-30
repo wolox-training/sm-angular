@@ -1,0 +1,31 @@
+.book {
+  box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.5);
+  margin: 18px;
+  padding: 28px;
+  width: 198px;
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 50px 0;
+  }
+
+  &__author {
+    color: #828282;
+    font-family: Roboto;
+    font-size: 14px;
+    margin: 4px 0;
+  }
+
+  &__cover {
+    width: 145px;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 6px 0;
+  }
+
+}
