@@ -14,5 +14,8 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 1024px;
+  // height: 100%; Enable later
 }
