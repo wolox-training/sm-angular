@@ -1,0 +1,27 @@
+.nav {
+  background-color: #FFF;
+  border-top: 6px solid #00ADEE;
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.5);
+  
+  &__content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+  }
+
+  &__logo {
+    height: 70px;
+    width: 212.42px;
+  }
+
+  &__logout {
+    // height: 18px;
+    // width: 63px;
+    color: #000;
+    // font-family: Roboto;
+    font-size: 18px;
+    line-height: 21px;
+  }
+}
