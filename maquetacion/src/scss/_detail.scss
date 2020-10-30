@@ -1,29 +1,45 @@
 .detail {
-  box-shadow: 1px 10px 30px 1px rgba(0,0,0,0.2);
+  background-color: #FFF;
+  box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.5);
   display: flex;
-  margin: 0.5rem;
+  height: 416px;
   max-width: 900px;
   padding: 1.5rem;
   width: 100%;
+
+  &__content {
+    width: 100%;
+  }
 
   &__cover {
     margin-right: 3rem;
   }
 
   &__cover-img {
-    width: 260px;
+    height: 368px;
+    width: 261px;
   }
 
   &__genre {
-    font-size: 1.5rem;
+    height: 30px;
+    width: 98px;
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
   }
 
   &__header {
-    margin: 1.5rem 0;
+    padding: 15px 0;
+    border-bottom: 4px solid #BED23C;
   }
 
   &__title {
-    font-size: 2rem;
+    height: 39px;
+    width: 210px;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
   }
 
   &__author,
