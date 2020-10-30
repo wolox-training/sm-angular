@@ -2,6 +2,10 @@
   background-color: #FFF;
   border-top: 6px solid #00ADEE;
   box-shadow: 0 4px 10px 0 rgba(0,0,0,0.5);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
   
   &__content {
     width: 100%;
