@@ -1,3 +1,15 @@
-.title {
-  color: red;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+
+@import 'colors';
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+.text-light {
+  color: $grey-light;
+}
+
+.text-bold {
+  font-weight: 700;
 }
