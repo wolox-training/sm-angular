@@ -6,10 +6,18 @@
   font-family: 'Roboto', sans-serif;
 }
 
+body {
+  font-size: 16px;
+}
+
 .text-light {
   color: $grey-light;
 }
 
 .text-bold {
   font-weight: 700;
+}
+
+.text-20 {
+  font-size: 1.25rem;
 }
