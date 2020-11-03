@@ -5,6 +5,7 @@
   height: 300px;
   margin: 18px;
   padding: 28px;
+  transition: all .1s ease-in-out;
   width: 198px;
 
   &-list {
@@ -36,6 +37,10 @@
     line-height: 18px;
     margin: 6px 0;
     width: 109px;
+  }
+
+  &:hover {
+    transform: scale(1.1);
   }
 
 }
