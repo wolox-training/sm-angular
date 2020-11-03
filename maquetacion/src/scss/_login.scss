@@ -1,6 +1,11 @@
 @import 'variables';
 @import 'mixins';
 
+.container-login {
+  @include container(900px);
+  height: 100%;
+}
+
 .login {
   background-color: $grey-light;
   border-top: 8px solid $wolox-blue;

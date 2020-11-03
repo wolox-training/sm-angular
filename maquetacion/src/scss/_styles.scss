@@ -34,20 +34,19 @@ html, body {
       bottom: 0;
       right: 0;
     }
+
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: auto;
+    margin: 0;
   }
 
 }
 
 .container {
   @include container(900px);
-  height: 100%;
 }
-
-.container-list {
-  @include container(1024px);
-  height: 100%;
-}
-
 
 .content {
   padding-top: 70px;

@@ -1,13 +1,33 @@
 @import 'variables';
+@import 'mixins';
+
+$cover-badge: 90px;
 
 %text-title {
   font-size: 20px;
   font-weight: 700;
+  @media screen and (max-width: 1024px) {
+    font-size: 14px;
+  }
 }
 
 %text-content {
   color: $grey-mid;
   font-size: 20px;
+  @media screen and (max-width: 1024px) {
+    font-size: 14px;
+  }
+}
+
+.container-detail {
+  @include container(900px);
+  height: 100%;
+
+  @media screen and (max-width: 1024px) {
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 90%;
+  }
 }
 
 .detail {
@@ -35,6 +55,11 @@
     height: 30px;
     line-height: 28px;
     width: 98px;
+
+    @media screen and (max-width: 1024px) {
+      font-size: 16px;
+    }
+
   }
 
   &__book-title {
@@ -42,7 +67,12 @@
     font-weight: 700;
     height: 39px;
     line-height: 38px;
-    width: 210px;
+    // width: 210px;
+
+    @media screen and (max-width: 1024px) {
+      font-size: 24px;
+    }
+
   }
 
   &__content {
@@ -52,6 +82,12 @@
   &__cover {
     margin-right: 52px;
     position: relative;
+
+    @media screen and (max-width: 1024px) {
+      font-size: 24px;
+      margin: 0 auto;
+    }
+
   }
 
   &__cover-badge {
@@ -59,12 +95,23 @@
     position: absolute;
     top: -15px;
     transform: rotate(15deg);
-    width: 90px;
+    width: $cover-badge;
+
+    @media screen and (max-width: 1024px) {
+      left: 180px;
+      width: 63px;
+    }
   }
 
   &__cover-img {
     height: 368px;
     width: 261px;
+
+    @media screen and (max-width: 1024px) {
+      height: 298.91px;
+      width: 212px;
+    }
+
   }
 
   &__editorial-title {
@@ -92,5 +139,17 @@
   &__editorial,
   &__year {
     margin: 32px 0;
+    @media screen and (max-width: 1024px) {
+      margin: 16px 0;
+    }
   }
+
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    height: 570px;
+    max-width: 336px;
+    width: 100%;
+    padding: 38px 18px;
+  }
+
 }
