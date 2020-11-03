@@ -1,0 +1,9 @@
+@mixin container($width) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  width: $width;
+  // height: 100%; Enable later
+}
