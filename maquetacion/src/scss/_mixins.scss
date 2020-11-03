@@ -5,5 +5,23 @@
   flex-direction: column;
   margin: 0 auto;
   width: $width;
-  // height: 100%; Enable later
+}
+
+@mixin button($color, $bgc, $hover-color, $hover-bgc, $border-color: rgba(0,0,0,0),) {
+  align-items: center;
+  background-color: $bgc;
+  border: 2px solid $border-color;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: $color;
+  display: flex;
+  font-size: 16px;
+  height: 32px;
+  justify-content: center;
+  line-height: 24px;
+
+  &:hover {
+    color: $hover-color;
+    background-color: $hover-bgc;
+  }
 }

@@ -1,0 +1,24 @@
+@import 'variables';
+@import 'mixins';
+
+.login {
+  background-color: $grey-light;
+  border-top: 8px solid $wolox-blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 400px;
+  padding: 24px;
+  width: 300px;
+}
+
+.login-button {
+  margin: 24px 0 0 0;
+  @include button($light, $wolox-green, $wolox-blue, $wolox-green);
+  width: 100%;
+}
+
+.signup-button {
+  @include button($wolox-green, $light, $light, $wolox-green, $wolox-green);
+  width: 100%;
+}

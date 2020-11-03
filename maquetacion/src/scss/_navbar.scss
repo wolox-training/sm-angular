@@ -1,6 +1,7 @@
 @import 'variables';
 
 .nav {
+  background-color: $light;
   border-top: 6px solid $wolox-blue;
   box-shadow: 0 4px 10px 0 $half-black;
   position: fixed;

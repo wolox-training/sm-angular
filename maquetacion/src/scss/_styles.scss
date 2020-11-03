@@ -39,16 +39,15 @@ html, body {
 }
 
 .container {
-  @include container(900px)
-}
-
-.container-detail {
-  @include container(900px)
+  @include container(900px);
+  height: 100%;
 }
 
 .container-list {
-  @include container(1024px)
+  @include container(1024px);
+  height: 100%;
 }
+
 
 .content {
   padding-top: 70px;
