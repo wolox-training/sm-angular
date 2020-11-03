@@ -1,4 +1,4 @@
-@import 'colors';
+@import 'variables';
 
 %text-title {
   font-size: 20px;
@@ -6,19 +6,18 @@
 }
 
 %text-content {
-  font-size: 20px;
   color: $grey-light;
+  font-size: 20px;
 }
 
 .detail {
-  background-color: #FFF;
-  box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.5);
+  box-shadow: 4px 4px 10px 0 $half-black;
   display: flex;
   height: 416px;
+  margin: 50px 0; // Delete later
   max-width: 900px;
   padding: 24px;
   width: 100%;
-  margin: 50px 0; // Delete later
 
   &__author-title {
     @extend %text-title;
@@ -30,7 +29,7 @@
 
   &__book-genre {
     color: $grey-light;
-    font-family: Roboto;
+    font-family: $primary-font;
     font-size: 24px;
     font-weight: 700;
     height: 30px;
@@ -77,8 +76,8 @@
   }
 
   &__header {
+    border-bottom: 4px solid $wolox-green;
     padding: 15px 0;
-    border-bottom: 4px solid #BED23C;
   }
 
   &__year-title {
@@ -92,6 +91,6 @@
   &__author,
   &__editorial,
   &__year {
-    margin: 2rem 0;
+    margin: 32px 0;
   }
 }
