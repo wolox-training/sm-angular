@@ -1,12 +1,13 @@
-@import 'variables';
+@import 'colors';
 
 .nav {
+  background-color: $light;
   border-top: 6px solid $wolox-blue;
   box-shadow: 0 4px 10px 0 $half-black;
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 5;
   
   &__content {
     align-items: center;
@@ -17,12 +18,10 @@
   }
 
   &__logo {
-    height: 70px;
-    width: 212.42px;
+    width: 215px;
   }
 
   &__logout {
     font-size: 18px;
-    line-height: 21px;
   }
 }

@@ -12,30 +12,25 @@ html, body {
 }
 
 .back-button {
-
   margin: 50px 0 110px 0;
   width: 100%;
   
   &__link {
-    
     font-size: 20px;
     height: 20px;
     line-height: 24px;
     width: 91px;
     position: relative;
 
-    // width: 59px;
-
     &::before {
-      content: url('../../assets/back-arrow-20.png');
-      padding: 0 10px 0 0;
-      position: relative;
-      top: 2.5px;
       bottom: 0;
+      content: url('../../assets/back-arrow-20.png');
+      padding-right: 10px;
+      position: relative;
       right: 0;
+      top: 2.5px;
     }
   }
-
 }
 
 .container {
