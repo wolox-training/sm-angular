@@ -11,30 +11,11 @@ html, body {
   height: 100%;
 }
 
-.container {
-  @include container(900px);
-}
-
-.container-detail {
-  @include container(900px);
-}
-
-.container-list {
-  @include container(1024px);
-}
-
-.content {
-  padding-top: 70px;
-}
-
-
 .back-button {
-
   margin: 50px 0 110px 0;
   width: 100%;
   
   &__link {
-    
     color: #000;
     font-family: Roboto;
     font-size: 20px;
@@ -53,4 +34,20 @@ html, body {
     }
   }
 
+}
+
+.container {
+  @include container(900px);
+}
+
+.container-detail {
+  @include container(900px);
+}
+
+.container-list {
+  @include container(1024px);
+}
+
+.content {
+  padding-top: 70px;
 }
