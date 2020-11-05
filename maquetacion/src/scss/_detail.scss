@@ -13,36 +13,22 @@
 .detail {
   box-shadow: 4px 4px 10px 0 $half-black;
   display: flex;
-  height: 416px;
-  margin: 50px 0; // Delete later
+  margin: 50px 0;
   max-width: 900px;
   padding: 24px;
   width: 100%;
-
-  &__author-title {
-    @extend %text-title;
-  }
-
-  &__author-content {
-    @extend %text-content;
-  }
 
   &__book-genre {
     color: $grey-light;
     font-family: $primary-font;
     font-size: 24px;
     font-weight: 700;
-    height: 30px;
-    line-height: 28px;
     width: 98px;
   }
 
   &__book-title {
     font-size: 32px;
     font-weight: 700;
-    height: 39px;
-    line-height: 38px;
-    width: 210px;
   }
 
   &__content {
@@ -55,7 +41,7 @@
   }
 
   &__cover-badge {
-    left: 200px;
+    right: -30px;
     position: absolute;
     top: -15px;
     transform: rotate(15deg);
@@ -63,16 +49,7 @@
   }
 
   &__cover-img {
-    height: 368px;
     width: 261px;
-  }
-
-  &__editorial-title {
-    @extend %text-title;
-  }
-
-  &__editorial-content {
-    @extend %text-content;
   }
 
   &__header {
@@ -80,17 +57,17 @@
     padding: 15px 0;
   }
 
-  &__year-title {
-    @extend %text-title;
-  }
-
-  &__year-content {
-    @extend %text-content;
-  }
-
   &__author,
   &__editorial,
   &__year {
     margin: 32px 0;
+
+    &-content {
+      @extend %text-content;
+    }
+
+    &-title {
+      @extend %text-title;
+    }
   }
 }
