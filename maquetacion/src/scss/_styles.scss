@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
 
 @import 'colors';
+@import 'mixins';
 
 * {
   font-family: 'Roboto', sans-serif;
@@ -10,11 +11,43 @@ html, body {
   height: 100%;
 }
 
+.back-button {
+  margin: 50px 0 110px 0;
+  width: 100%;
+  
+  &__link {
+    color: #000;
+    font-family: Roboto;
+    font-size: 20px;
+    height: 20px;
+    line-height: 24px;
+    position: relative;
+    width: 91px;
+
+    &::before {
+      content: url('../../assets/back-arrow-20.png');
+      padding: 0 10px 0 0;
+      position: relative;
+      top: 2.5px;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+}
+
 .container {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0 auto;
-  width: 1024px;
+  @include container(900px);
+}
+
+.container-detail {
+  @include container(900px);
+}
+
+.container-list {
+  @include container(1024px);
+}
+
+.content {
+  padding-top: 70px;
 }
