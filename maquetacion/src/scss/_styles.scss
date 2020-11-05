@@ -11,26 +11,16 @@ html, body {
   height: 100%;
 }
 
-// %container {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   flex-direction: column;
-//   margin: 0 auto;
-//   // width: 900px;
-//   // height: 100%; Enable later
-// }
-
 .container {
-  @include container(900px)
+  @include container(900px);
 }
 
 .container-detail {
-  @include container(900px)
+  @include container(900px);
 }
 
 .container-list {
-  @include container(1024px)
+  @include container(1024px);
 }
 
 .content {
@@ -50,10 +40,8 @@ html, body {
     font-size: 20px;
     height: 20px;
     line-height: 24px;
-    width: 91px;
     position: relative;
-
-    // width: 59px;
+    width: 91px;
 
     &::before {
       content: url('../../assets/back-arrow-20.png');
