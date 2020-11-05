@@ -1,6 +1,5 @@
 .book {
   box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.5);
-  height: 300px;
   margin: 18px;
   padding: 28px;
   width: 198px;
@@ -16,24 +15,17 @@
     color: #828282;
     font-family: Roboto;
     font-size: 14px;
-    height: 14px;
-    line-height: 18px;
-    width: 109px;
     margin: 4px 0;
   }
 
   &__cover {
-    height: 200px;
-    width: 142px;
+    width: 145px;
   }
 
   &__title {
     font-size: 16px;
     font-weight: 700;
-    height: 15px;
     margin: 6px 0;
-    line-height: 18px;
-    width: 109px;
   }
 
 }
