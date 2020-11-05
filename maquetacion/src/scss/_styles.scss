@@ -23,7 +23,6 @@ html, body {
     position: relative;
 
     &::before {
-      bottom: 0;
       content: url('../../assets/back-arrow-20.png');
       padding-right: 10px;
       position: relative;
