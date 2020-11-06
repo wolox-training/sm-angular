@@ -9,19 +9,20 @@
     <link rel="stylesheet" type="text/css" href="./dist/css/application.css" />
   </head>
   <body>
-    <form class="login">
+    <div class="login">
       <img class="login__logo" src="./assets/logo-wolox.png" alt="Logo Wolox">
-      <div class="login__email form-input">
-        <label class="form-input__label" for="email">Email</label>
-        <input class="form-input__input" type="email" name="email" id="email">
-      </div>
-      <div class="login__password form-input">
-        <label class="form-input__label" for="password">Password</label>
-        <input class="form-input__input" type="password" name="password" id="password">
-      </div>
-      <a href="./book-list.html" class="login-button">Login</a>
-      <hr class="form-divider">
+      <form class="login__form">
+        <div class="login__email form-input">
+          <label class="form-input__label" for="email">Email</label>
+          <input class="form-input__input" type="email" name="email" id="email">
+        </div>
+        <div class="login__password form-input">
+          <label class="form-input__label" for="password">Password</label>
+          <input class="form-input__input" type="password" name="password" id="password">
+        </div>
+        <a href="./book-list.html" class="login-button">Login</a>
+      </form>
       <a href="./book-list.html" class="signup-button">Sign Up</a>
-    </form>
+    </div>
   </body>
 </html>

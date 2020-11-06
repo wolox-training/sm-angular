@@ -12,6 +12,13 @@
   margin: 0 auto;
   padding: 24px;
   width: 300px;
+
+  &__form {
+    border-bottom: 2px solid $grey-dark;;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    width: 100%;
+  }
 }
 
 .login-button {
