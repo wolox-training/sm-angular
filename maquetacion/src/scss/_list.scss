@@ -1,5 +1,8 @@
+@import 'variables';
+@import 'colors';
+
 .book {
-  box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.5);
+  box-shadow: 4px 4px 10px 0 $half-black;
   margin: 18px;
   padding: 28px;
   width: 198px;
@@ -8,12 +11,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 50px 0;
+    padding-top: 70px;
   }
 
   &__author {
-    color: #828282;
-    font-family: Roboto;
+    color: $grey-mid;
+    font-family: $primary-font;
     font-size: 14px;
     margin: 4px 0;
   }

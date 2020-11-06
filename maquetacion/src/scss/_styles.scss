@@ -4,36 +4,32 @@
 @import 'mixins';
 
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: $primary-font;
 }
 
 html, body {
+  flex-direction: column;
+  display: flex;
   height: 100%;
+  justify-content: center;
 }
 
 .back-button {
+  color: $dark;
+  font-family: $primary-font;
+  font-size: 20px;
+  height: 20px;
   margin: 50px 0 110px 0;
+  position: relative;
   width: 100%;
-  
-  &__link {
-    color: #000;
-    font-family: Roboto;
-    font-size: 20px;
-    height: 20px;
-    line-height: 24px;
+
+  &::before {
+    content: url('../../assets/back-arrow-20.png');
+    padding-right: 10px;
     position: relative;
-    width: 91px;
-
-    &::before {
-      content: url('../../assets/back-arrow-20.png');
-      padding: 0 10px 0 0;
-      position: relative;
-      top: 2.5px;
-      bottom: 0;
-      right: 0;
-    }
+    right: 0;
+    top: 2.5px;
   }
-
 }
 
 .container {
