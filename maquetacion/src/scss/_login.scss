@@ -15,12 +15,12 @@
 }
 
 .login-button {
-  @include button($light, $wolox-green, $wolox-blue, $wolox-green);
-  margin: 24px 0 0 0;
+  @include button($light, $wolox-green, $wolox-blue, $grey-light, $wolox-blue, $border-hover:true);
+  margin-top: 24px;
   width: 100%;
 }
 
 .signup-button {
-  @include button($wolox-green, $light, $light, $wolox-green, $wolox-green);
+  @include button($wolox-green, $grey-light, $light, $wolox-green, $wolox-green, $border: true);
   width: 100%;
 }

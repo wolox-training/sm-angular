@@ -1,7 +1,9 @@
-@mixin button($color, $bgc, $hover-color, $hover-bgc, $border-color: rgba(0,0,0,0)) {
+@mixin button($color, $bgc, $hover-color, $hover-bgc, $border-color: rgba(0,0,0,0), $border: false, $border-hover: false) {
   align-items: center;
   background-color: $bgc;
-  border: 2px solid $border-color;
+  @if $border {
+    border: 2px solid $border-color;
+  }
   border-radius: 5px;
   box-sizing: border-box;
   color: $color;
@@ -9,9 +11,11 @@
   font-size: 16px;
   height: 32px;
   justify-content: center;
-  line-height: 24px;
 
   &:hover {
+    @if $border-hover {
+      border: 2px solid $border-color;
+    }
     color: $hover-color;
     background-color: $hover-bgc;
   }
