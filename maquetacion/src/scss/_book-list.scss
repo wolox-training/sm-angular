@@ -1,5 +1,7 @@
+@import 'colors';
+
 .book {
-  box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.5);
+  box-shadow: 4px 4px 10px 0 $half-black;
   margin: 18px;
   padding: 28px;
   width: 198px;
@@ -12,8 +14,8 @@
   }
 
   &__author {
-    color: #828282;
-    font-family: Roboto;
+    color: $grey-light;
+    font-family: $primary-font;
     font-size: 14px;
     margin: 4px 0;
   }
@@ -25,7 +27,6 @@
   &__title {
     font-size: 16px;
     font-weight: 700;
-    margin: 6px 0;
+    margin: 10px 0;
   }
-
 }
