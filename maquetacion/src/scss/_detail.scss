@@ -15,7 +15,7 @@
   background-color: $light;
   box-shadow: 4px 4px 10px 0 $half-black;
   display: flex;
-  max-width: 900psx;
+  max-width: 900px;
   padding: 24px;
   width: 100%;
 
@@ -49,7 +49,7 @@
   }
 
   &__cover-img {
-    width: 261px;
+    width: 260px;
   }
 
   &__header {
@@ -61,7 +61,7 @@
   &__editorial,
   &__year {
     margin: 32px 0;
-    
+
     &-content {
       @extend %text-content;
     }

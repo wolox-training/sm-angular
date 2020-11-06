@@ -15,13 +15,13 @@
   }
 
   &__input {
-    height: 32px;
     border: none;
+    height: 32px;
   }
 }
 
 .form-divider {
   border: 2px solid $grey-dark;
-  width: 100%;
   margin: 16px 0;
+  width: 100%;
 }
