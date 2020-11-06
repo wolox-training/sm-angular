@@ -1,3 +1,4 @@
+@import 'variables';
 @import 'colors';
 
 .book {
@@ -10,11 +11,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 50px 0;
+    padding-top: 70px;
   }
 
   &__author {
-    color: $grey-light;
+    color: $grey-mid;
     font-family: $primary-font;
     font-size: 14px;
     margin: 4px 0;

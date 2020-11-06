@@ -1,26 +1,23 @@
 @import 'colors';
 
 .nav {
+  align-items: center;
   background-color: $light;
   border-top: 6px solid $wolox-blue;
   box-shadow: 0 4px 10px 0 $half-black;
+  display: flex;
+  justify-content: space-around;
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 5;
-  
-  &__content {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
+  z-index: 1;
 
   &__logo {
     width: 215px;
   }
 
   &__logout {
+    color: $dark;
     font-size: 18px;
   }
 }
