@@ -1,14 +1,25 @@
+@import 'breakpoints';
 @import 'colors';
 @import 'variables';
+
+$badge-width: 90px;
 
 %text-title {
   font-size: 20px;
   font-weight: 700;
+
+  @media screen and (max-width: $lg) {
+    font-size: 14px;
+  }
 }
 
 %text-content {
   color: $grey-dark;
   font-size: 20px;
+
+  @media screen and (max-width: $lg) {
+    font-size: 14px;
+  }
 }
 
 .detail {
@@ -19,16 +30,30 @@
   padding: 24px;
   width: 100%;
 
+  @media screen and (max-width: $lg) {
+    flex-direction: column;
+    margin-top: 75px;
+    width: 340px;
+  }
+
   &__book-genre {
     color: $grey-dark;
     font-family: $primary-font;
     font-size: 24px;
     font-weight: 700;
+
+    @media screen and (max-width: $lg) {
+      font-size: 16px;
+    }
   }
 
   &__book-title {
     font-size: 32px;
     font-weight: 700;
+
+    @media screen and (max-width: $lg) {
+      font-size: 24px;
+    }
   }
 
   &__content {
@@ -38,6 +63,10 @@
   &__cover {
     margin-right: 52px;
     position: relative;
+
+    @media screen and (max-width: $lg) {
+      margin: 0 auto;
+    }
   }
 
   &__cover-badge {
@@ -45,11 +74,20 @@
     right: -30px;
     top: -15px;
     transform: rotate(15deg);
-    width: 90px;
+    width: $badge-width;
+
+    @media screen and (max-width: $lg) {
+      right: -20px;
+      width: calc(#{$badge-width} - 30px);
+    }
   }
 
   &__cover-img {
     width: 260px;
+
+    @media screen and (max-width: $lg) {
+      width: 210px
+    }
   }
 
   &__header {

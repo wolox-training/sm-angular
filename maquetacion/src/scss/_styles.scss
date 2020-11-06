@@ -31,6 +31,11 @@ html, body {
     right: 0;
     top: 3px;
   }
+
+  @media screen and (max-width: $lg) {
+    margin: 25px 0;
+    width: auto;
+  }
 }
 
 .container {
@@ -39,6 +44,11 @@ html, body {
 
 .container-detail {
   @include container(900px);
+  
+  @media screen and (max-width: $lg) {
+    align-items: center;
+    flex-direction: column-reverse;
+  }
 }
 
 .container-list {
