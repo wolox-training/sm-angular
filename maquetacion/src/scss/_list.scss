@@ -5,7 +5,12 @@
   box-shadow: 4px 4px 10px 0 $half-black;
   margin: 18px;
   padding: 28px;
+  transition: all .1s ease-in-out;
   width: 198px;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 
   &-list {
     display: flex;
