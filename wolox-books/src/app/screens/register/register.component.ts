@@ -32,9 +32,4 @@ export class RegisterComponent implements OnInit {
     console.log({ user });
   }
 
-  // DELETE LATER
-  showForm() {
-    console.log(this.registerForm);
-  }
-
 }
