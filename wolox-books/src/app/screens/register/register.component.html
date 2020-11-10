@@ -1,3 +1,4 @@
+<button type="button" (click)="showForm()">Form</button>
 <div class="register">
   <img class="register__logo" src="/assets/images/logo-wolox.png" alt="Logo Wolox">
   <form [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm.value)" class="register__form">

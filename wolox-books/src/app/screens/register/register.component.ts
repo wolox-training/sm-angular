@@ -11,6 +11,7 @@ import passwordConfirmation from 'src/app/validators/password-confirmation.valid
 export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
+  patternPasswordValidation: RegExp = /.*[A-Z]+.*[0-9]+.*/;
 
   constructor(
     private fb: FormBuilder,
@@ -19,7 +20,7 @@ export class RegisterComponent implements OnInit {
       'name': [ null ],
       'last-name': [ null ],
       'email': [ null, [ Validators.required, Validators.email ] ],
-      'password': [ null, [ Validators.required, Validators.pattern("([A-Z0-9]+)") ] ],
+      'password': [ null, [ Validators.required, Validators.pattern(this.patternPasswordValidation) ] ],
       'password-confirmation': [ null, [ Validators.required, passwordConfirmation() ] ],
     })
   }
@@ -31,6 +32,7 @@ export class RegisterComponent implements OnInit {
     console.log({ user });
   }
 
+  // DELETE LATER
   showForm() {
     console.log(this.registerForm);
   }
