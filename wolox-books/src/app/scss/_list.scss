@@ -1,0 +1,38 @@
+@import 'variables';
+@import 'colors';
+
+.book {
+  box-shadow: 4px 4px 10px 0 $half-black;
+  margin: 18px;
+  padding: 28px;
+  transition: all .1s ease-in-out;
+  width: 198px;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 70px;
+  }
+
+  &__author {
+    color: $grey-mid;
+    font-family: $primary-font;
+    font-size: 14px;
+    margin: 4px 0;
+  }
+
+  &__cover {
+    width: 145px;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 10px 0;
+  }
+}

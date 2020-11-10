@@ -1,0 +1,33 @@
+@import 'colors';
+@import 'mixins';
+
+.login {
+  align-items: center;
+  align-self: center;
+  background-color: $grey-light;
+  border-top: 8px solid $wolox-blue;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  margin: 0 auto;
+  padding: 24px;
+  width: 300px;
+
+  &__form {
+    border-bottom: 2px solid $grey-dark;;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    width: 100%;
+  }
+}
+
+.login-button {
+  @include button($light, $wolox-green, $wolox-blue, $grey-light, $wolox-blue, $border-hover:true);
+  margin-top: 24px;
+  width: 100%;
+}
+
+.signup-button {
+  @include button($wolox-green, $grey-light, $light, $wolox-green, $wolox-green, $border: true);
+  width: 100%;
+}

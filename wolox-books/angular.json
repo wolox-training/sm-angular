@@ -126,6 +126,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "wolox-books"
+    }
+  },
+  "defaultProject": "wolox-books",
+  "cli": {
+    "analytics": "ba969946-f146-4c73-ad86-6016808131e4"
+  }
 }
