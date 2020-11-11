@@ -55,7 +55,7 @@ $badge-width: 90px;
     font-size: 24px;
     font-weight: 700;
     grid-area: genre;
-    margin: 0 auto 25px auto;
+    margin: 0 auto 25px;
 
     @media screen and (max-width: $lg) {
       border-bottom: 4px solid $wolox-green;
