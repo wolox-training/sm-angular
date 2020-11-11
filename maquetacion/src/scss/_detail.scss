@@ -26,25 +26,25 @@ $badge-width: 90px;
   background-color: $light;
   box-shadow: 4px 4px 10px 0 $half-black;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
   grid-template-areas:
   'title title title'
   'genre genre genre'
   'cover info info';
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   margin-bottom: 30px;
   max-width: 900px;
   padding: 24px;
   width: 100%;
 
   @media screen and (max-width: $lg) {
-    grid-template-columns: 1fr;
-    grid-template-rows: 60px 300px 60px 1fr;
     grid-template-areas:
     'title'
     'cover'
     'genre'
     'info';
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px 300px 60px 1fr;
     margin-top: 75px;
     width: 340px;
   }
