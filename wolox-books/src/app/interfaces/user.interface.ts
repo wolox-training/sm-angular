@@ -1,7 +1,7 @@
 export default interface IUser {
-  'name': string;
-  'last-name': string;
+  'first_name': string;
+  'last_name': string;
   'email': string;
   'password': string;
-  'password-confirmation': string;
+  'password_confirmation': string;
 }

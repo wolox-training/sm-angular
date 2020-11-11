@@ -20,7 +20,7 @@ html, body {
   font-family: $primary-font;
   font-size: 20px;
   height: 20px;
-  margin: 50px 0 110px 0;
+  margin: 50px 0 110px;
   position: relative;
   width: 100%;
 
@@ -44,7 +44,7 @@ html, body {
 
 .container-detail {
   @include container(900px);
-  
+
   @media screen and (max-width: $lg) {
     align-items: center;
     flex-direction: column-reverse;

@@ -2,29 +2,45 @@
   <img class="register__logo" src="/assets/images/logo-wolox.png" alt="Logo Wolox">
   <form [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm.value)" class="register__form">
     <div class="register__name form-input">
-      <label class="form-input__label" for="name">Nombre</label>
-      <input class="form-input__input" name="name" id="name" formControlName="name">
+      <label class="form-input__label" for="first_name">Nombre</label>
+      <input class="form-input__input" name="first_name" id="first_name" formControlName="first_name">
     </div>
-    <div class="register__last-name form-input">
-      <label class="form-input__label" for="last-name">Apellido</label>
-      <input class="form-input__input" name="last-name" id="last-name" formControlName="last-name">
+    <div class="register__last_name form-input">
+      <label class="form-input__label" for="last_name">Apellido</label>
+      <input class="form-input__input" name="last_name" id="last_name" formControlName="last_name">
     </div>
     <div class="register__email form-input">
       <label class="form-input__label" for="email">Email</label>
       <input class="form-input__input" type="email" name="email" id="email" formControlName="email">
-      <span class="form-input__error" *ngIf="registerForm.controls['email']?.errors?.required && registerForm.controls['email']?.touched">El email es requerido</span>
-      <span class="form-input__error" *ngIf="registerForm.controls['email']?.errors?.email && registerForm.controls['email']?.touched && registerForm.controls['email']?.value?.length > 5">Formato de email incorrecto</span>
+      <span class="form-input__error" *ngIf="emailFC?.hasError('required') && emailFC?.touched">El email es requerido</span>
+      <span
+        class="form-input__error"
+        *ngIf="emailFC?.errors?.email && emailFC?.touched && emailFC?.value?.length > 5">Formato de email incorrecto</span>
     </div>
     <div class="register__password form-input">
       <label class="form-input__label" for="password">Password</label>
       <input class="form-input__input" type="password" name="password" id="password" formControlName="password">
-      <span class="form-input__error" *ngIf="registerForm.controls['password']?.errors?.required && registerForm.controls['password']?.touched">El password es requerido</span>
+      <span
+        class="form-input__error"
+        *ngIf="passwordFC?.hasError('required') && passwordFC?.touched">El password es requerido</span>
+      <span
+        class="form-input__error"
+        *ngIf="passwordFC?.hasError('pattern') && passwordFC?.touched">El password debe tener al menos 1 letra mayuscula y 1 numero</span>
     </div>
-    <div class="register__password-confirmation form-input">
-      <label class="form-input__label" for="password-confirmation">Confirmación de Password</label>
-      <input class="form-input__input" type="password" name="password-confirmation" id="password-confirmation" formControlName="password-confirmation">
-      <span class="form-input__error" *ngIf="registerForm.controls['password-confirmation']?.errors?.required && registerForm.controls['password-confirmation']?.touched">La confirmación del password es requerida</span>
-      <span class="form-input__error" *ngIf="registerForm.controls['password-confirmation']?.errors?.incorrectPassword && registerForm.controls['password-confirmation']?.touched">Error en la validación del password</span>
+    <div class="register__password_confirmation form-input">
+      <label class="form-input__label" for="password_confirmation">Confirmación de Password</label>
+      <input
+        class="form-input__input"
+        type="password"
+        name="password_confirmation"
+        id="password_confirmation"
+        formControlName="password_confirmation">
+      <span
+        class="form-input__error"
+        *ngIf="passwordConfirmationFC?.hasError('required') && passwordConfirmationFC?.touched">La confirmación del password es requerida</span>
+      <span
+        class="form-input__error"
+        *ngIf="passwordConfirmationFC?.hasError('incorrectPassword') && passwordConfirmationFC?.touched && passwordConfirmationFC?.value?.length > 1">Error en la validación del password</span>
     </div>
     <button type="submit" class="register-button" [disabled]="!registerForm.valid">Login</button>
   </form>

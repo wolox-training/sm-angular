@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import patternPasswordValidation from 'src/app/constants/pattern-password-validation.constant';
 import IUser from 'src/app/interfaces/user.interface';
 import passwordConfirmation from 'src/app/validators/password-confirmation.validator';
 
@@ -8,28 +9,36 @@ import passwordConfirmation from 'src/app/validators/password-confirmation.valid
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent{
 
   registerForm: FormGroup;
-  patternPasswordValidation: RegExp = /.*[A-Z]+.*[0-9]+.*/;
 
   constructor(
     private fb: FormBuilder,
   ) {
+    console.log('passwordConfirmation :>> ', passwordConfirmation);
     this.registerForm = fb.group({
-      'name': [ null ],
-      'last-name': [ null ],
+      'first_name': [ null ],
+      'last_name': [ null ],
       'email': [ null, [ Validators.required, Validators.email ] ],
-      'password': [ null, [ Validators.required, Validators.pattern(this.patternPasswordValidation) ] ],
-      'password-confirmation': [ null, [ Validators.required, passwordConfirmation() ] ],
+      'password': [ null, [ Validators.required, Validators.pattern(patternPasswordValidation) ] ],
+      'password_confirmation': [ null, [ Validators.required, passwordConfirmation() ] ],
     })
-  }
-
-  ngOnInit(): void {
   }
 
   registerUser(user: IUser) {
     console.log({ user });
   }
 
+  get emailFC(): FormControl {
+    return this.registerForm.controls['email'] as FormControl;
+  }
+
+  get passwordFC(): FormControl {
+    return this.registerForm.controls['password'] as FormControl;
+  }
+
+  get passwordConfirmationFC(): FormControl {
+    return this.registerForm.controls['password_confirmation'] as FormControl;
+  }
 }
