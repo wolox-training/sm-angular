@@ -71,7 +71,7 @@ $badge-width: 90px;
     font-size: 32px;
     font-weight: 700;
     grid-area: title;
-    margin: 10px auto 0 auto;
+    margin: 10px auto 0;
 
     @media screen and (max-width: $lg) {
       font-size: 24px;
