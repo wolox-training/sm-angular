@@ -16,7 +16,6 @@ export class RegisterComponent{
   constructor(
     private fb: FormBuilder,
   ) {
-    console.log('passwordConfirmation :>> ', passwordConfirmation);
     this.registerForm = fb.group({
       'first_name': [ null ],
       'last_name': [ null ],

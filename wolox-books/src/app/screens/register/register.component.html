@@ -42,7 +42,7 @@
         class="form-input__error"
         *ngIf="passwordConfirmationFC?.hasError('incorrectPassword') && passwordConfirmationFC?.touched && passwordConfirmationFC?.value?.length > 1">Error en la validación del password</span>
     </div>
-    <button type="submit" class="register-button" [disabled]="!registerForm.valid">Login</button>
+    <button type="submit" class="register-button" [disabled]="!registerForm.valid">Sign Up</button>
   </form>
-  <a href="./book-list.html" class="signup-button">Sign Up</a>
+  <a href="./book-list.html" class="signup-button">Login</a>
 </div>
