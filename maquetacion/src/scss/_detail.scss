@@ -25,13 +25,26 @@ $badge-width: 90px;
 .detail {
   background-color: $light;
   box-shadow: 4px 4px 10px 0 $half-black;
-  display: flex;
+  display: grid;
+  grid-template-areas:
+  'title title title'
+  'genre genre genre'
+  'cover info info';
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin-bottom: 30px;
   max-width: 900px;
   padding: 24px;
   width: 100%;
 
   @media screen and (max-width: $lg) {
-    flex-direction: column;
+    grid-template-areas:
+    'title'
+    'cover'
+    'genre'
+    'info';
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px 300px 60px 1fr;
     margin-top: 75px;
     width: 340px;
   }
@@ -41,27 +54,35 @@ $badge-width: 90px;
     font-family: $primary-font;
     font-size: 24px;
     font-weight: 700;
+    grid-area: genre;
+    margin: 0 auto 25px;
 
     @media screen and (max-width: $lg) {
+      border-bottom: 4px solid $wolox-green;
       font-size: 16px;
+      margin: 15px auto 10px;
+      padding-bottom: 10px;
+      text-align: center;
+      width: 100%;
     }
   }
 
   &__book-title {
     font-size: 32px;
     font-weight: 700;
+    grid-area: title;
+    margin: 10px auto 0;
 
     @media screen and (max-width: $lg) {
       font-size: 24px;
+      margin: 10px auto 25px;
     }
   }
 
-  &__content {
-    width: 100%;
-  }
-
   &__cover {
-    margin-right: 52px;
+    display: flex;
+    grid-area: cover;
+    justify-content: center;
     position: relative;
 
     @media screen and (max-width: $lg) {
@@ -71,8 +92,8 @@ $badge-width: 90px;
 
   &__cover-badge {
     position: absolute;
-    right: -30px;
-    top: -15px;
+    right: -15px;
+    top: -25px;
     transform: rotate(15deg);
     width: $badge-width;
 
@@ -90,15 +111,26 @@ $badge-width: 90px;
     }
   }
 
-  &__header {
-    border-bottom: 4px solid $wolox-green;
-    padding: 15px 0;
+  &__info {
+    display: flex;
+    flex-direction: column;
+    grid-area: info;
+    justify-content: center;
+    padding-left: 30px;
+
+    @media screen and (max-width: $lg) {
+      padding-left: 0;
+    }
   }
 
   &__author,
   &__editorial,
   &__year {
-    margin: 32px 0;
+    margin: 20px 0;
+
+    @media screen and (max-width: $lg) {
+      margin: 10px 0;
+    }
 
     &-content {
       @extend %text-content;
