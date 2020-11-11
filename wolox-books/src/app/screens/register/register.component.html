@@ -15,7 +15,9 @@
       <span class="form-input__error" *ngIf="emailFC?.hasError('required') && emailFC?.touched">El email es requerido</span>
       <span
         class="form-input__error"
-        *ngIf="emailFC?.errors?.email && emailFC?.touched && emailFC?.value?.length > 5">Formato de email incorrecto</span>
+        *ngIf="emailFC.hasError('email') && emailFC?.touched">
+        Formato de email incorrecto
+      </span>
     </div>
     <div class="register__password form-input">
       <label class="form-input__label" for="password">Password</label>
