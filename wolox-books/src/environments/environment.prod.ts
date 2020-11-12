@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  api: 'https://wbooks-api-stage.herokuapp.com/api/v1',
 };
