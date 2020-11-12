@@ -23,7 +23,9 @@
       <input class="form-input__input" type="password" name="password" id="password" formControlName="password">
       <span
         class="form-input__error"
-        *ngIf="passwordFC?.hasError('required') && passwordFC?.touched">El password es requerido</span>
+        *ngIf="passwordFC?.hasError('required') && passwordFC?.touched">
+        El password es requerido
+      </span>
       <span
         class="form-input__error"
         *ngIf="passwordFC?.hasError('pattern') && passwordFC?.touched">El password debe tener al menos 1 letra mayuscula y 1 numero</span>
