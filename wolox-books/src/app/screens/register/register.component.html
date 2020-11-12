@@ -38,7 +38,9 @@
         formControlName="password_confirmation">
       <span
         class="form-input__error"
-        *ngIf="passwordConfirmationFC?.hasError('required') && passwordConfirmationFC?.touched">La confirmación del password es requerida</span>
+        *ngIf="passwordConfirmationFC?.hasError('required') && passwordConfirmationFC?.touched">
+        La confirmación del password es requerida
+      </span>
       <span
         class="form-input__error"
         *ngIf="passwordConfirmationFC?.hasError('incorrectPassword') && passwordConfirmationFC?.touched">
