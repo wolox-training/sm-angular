@@ -1,0 +1,14 @@
+@import 'colors';
+@import 'mixins';
+
+.authentication {
+  align-items: center;
+  align-self: center;
+  background-color: $grey-light;
+  border-top: 8px solid $wolox-blue;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 24px;
+  width: 300px;
+}

@@ -1,5 +1,4 @@
-<div class="register">
-  <img class="register__logo" src="/assets/images/logo-wolox.png" alt="Logo Wolox">
+<wb-authentication [authType]="'register'">
   <form [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm.value)" class="register__form">
     <div class="register__name form-input">
       <label class="form-input__label" for="first_name">Nombre</label>
@@ -12,7 +11,9 @@
     <div class="register__email form-input">
       <label class="form-input__label" for="email">Email</label>
       <input class="form-input__input" type="email" name="email" id="email" formControlName="email">
-      <span class="form-input__error" *ngIf="emailFC?.hasError('required') && emailFC?.touched">El email es requerido</span>
+      <span class="form-input__error" *ngIf="emailFC?.hasError('required') && emailFC?.touched">
+        El email es requerido
+      </span>
       <span
         class="form-input__error"
         *ngIf="emailFC.hasError('email') && emailFC?.touched">
@@ -24,10 +25,14 @@
       <input class="form-input__input" type="password" name="password" id="password" formControlName="password">
       <span
         class="form-input__error"
-        *ngIf="passwordFC?.hasError('required') && passwordFC?.touched">El password es requerido</span>
+        *ngIf="passwordFC?.hasError('required') && passwordFC?.touched">
+        El password es requerido
+      </span>
       <span
         class="form-input__error"
-        *ngIf="passwordFC?.hasError('pattern') && passwordFC?.touched">El password debe tener al menos 1 letra mayuscula y 1 numero</span>
+        *ngIf="passwordFC?.hasError('pattern') && passwordFC?.touched">
+        El password debe tener al menos 1 letra mayuscula y 1 numero
+      </span>
     </div>
     <div class="register__password_confirmation form-input">
       <label class="form-input__label" for="password_confirmation">Confirmación de Password</label>
@@ -39,12 +44,15 @@
         formControlName="password_confirmation">
       <span
         class="form-input__error"
-        *ngIf="passwordConfirmationFC?.hasError('required') && passwordConfirmationFC?.touched">La confirmación del password es requerida</span>
+        *ngIf="passwordConfirmationFC?.hasError('required') && passwordConfirmationFC?.touched">
+        La confirmación del password es requerida
+      </span>
       <span
         class="form-input__error"
-        *ngIf="passwordConfirmationFC?.hasError('incorrectPassword') && passwordConfirmationFC?.touched">Error en la validación del password</span>
+        *ngIf="passwordConfirmationFC?.hasError('incorrectPassword') && passwordConfirmationFC?.touched">
+        Error en la validación del password
+      </span>
     </div>
-    <button type="submit" class="register-button" [disabled]="!registerForm.valid">Sign Up</button>
+    <button type="submit" class="primary-action" [disabled]="!registerForm.valid">Sign Up</button>
   </form>
-  <a href="./book-list.html" class="signup-button">Login</a>
-</div>
+</wb-authentication>

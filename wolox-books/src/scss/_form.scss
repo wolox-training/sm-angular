@@ -27,3 +27,20 @@
     padding: 5px;
   }
 }
+
+.primary-action {
+  @include button($light, $wolox-green, $wolox-blue, $grey-light, $wolox-blue, $border-hover:true);
+  margin-top: 24px;
+  width: 100%;
+
+  &:disabled {
+    background-color: $grey-mid;
+    border-color: $grey-mid;
+    color: $light;
+  }
+}
+
+.secondary-action {
+  @include button($wolox-green, $grey-light, $light, $wolox-green, $wolox-green, $border: true);
+  width: 100%;
+}
