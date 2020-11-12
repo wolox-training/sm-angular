@@ -11,7 +11,9 @@
     <div class="register__email form-input">
       <label class="form-input__label" for="email">Email</label>
       <input class="form-input__input" type="email" name="email" id="email" formControlName="email">
-      <span class="form-input__error" *ngIf="emailFC?.hasError('required') && emailFC?.touched">El email es requerido</span>
+      <span class="form-input__error" *ngIf="emailFC?.hasError('required') && emailFC?.touched">
+        El email es requerido
+      </span>
       <span
         class="form-input__error"
         *ngIf="emailFC.hasError('email') && emailFC?.touched">
