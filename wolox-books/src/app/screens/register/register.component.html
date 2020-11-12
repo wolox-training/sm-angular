@@ -28,7 +28,9 @@
       </span>
       <span
         class="form-input__error"
-        *ngIf="passwordFC?.hasError('pattern') && passwordFC?.touched">El password debe tener al menos 1 letra mayuscula y 1 numero</span>
+        *ngIf="passwordFC?.hasError('pattern') && passwordFC?.touched">
+        El password debe tener al menos 1 letra mayuscula y 1 numero
+      </span>
     </div>
     <div class="register__password_confirmation form-input">
       <label class="form-input__label" for="password_confirmation">Confirmación de Password</label>
