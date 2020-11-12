@@ -1,0 +1,31 @@
+@mixin button($color, $bgc, $hover-color, $hover-bgc, $border-color: rgba(0,0,0,0), $border: false, $border-hover: false) {
+  align-items: center;
+  background-color: $bgc;
+  @if $border {
+    border: 2px solid $border-color;
+  }
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: $color;
+  display: flex;
+  font-size: 16px;
+  height: 32px;
+  justify-content: center;
+
+  &:hover {
+    @if $border-hover {
+      border: 2px solid $border-color;
+    }
+    color: $hover-color;
+    background-color: $hover-bgc;
+  }
+}
+
+@mixin container($width) {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: $width;
+}
