@@ -1,5 +1,4 @@
-<div class="register">
-  <img class="register__logo" src="/assets/images/logo-wolox.png" alt="Logo Wolox">
+<wb-authentication [authType]="'register'">
   <form [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm.value)" class="register__form">
     <div class="register__name form-input">
       <label class="form-input__label" for="first_name">Nombre</label>
@@ -44,7 +43,6 @@
         class="form-input__error"
         *ngIf="passwordConfirmationFC?.hasError('incorrectPassword') && passwordConfirmationFC?.touched">Error en la validación del password</span>
     </div>
-    <button type="submit" class="register-button" [disabled]="!registerForm.valid">Sign Up</button>
+    <button type="submit" class="primary-action" [disabled]="!registerForm.valid">Sign Up</button>
   </form>
-  <a href="./book-list.html" class="signup-button">Login</a>
-</div>
+</wb-authentication>
