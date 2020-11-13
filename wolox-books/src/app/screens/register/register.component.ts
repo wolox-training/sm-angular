@@ -30,7 +30,7 @@ export class RegisterComponent{
   }
 
   registerUser(user: IUser) {
-    this.userService.createUser(user).subscribe((respose: IRegisterResponse) => console.log('success', respose))
+    this.userService.createUser(user).subscribe((respose: IRegisterResponse) => console.log('success', respose));
   }
 
   get firstNameFC(): FormControl {
