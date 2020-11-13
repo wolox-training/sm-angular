@@ -3,10 +3,16 @@
     <div class="register__name form-input">
       <label class="form-input__label" for="first_name">Nombre</label>
       <input class="form-input__input" name="first_name" id="first_name" formControlName="first_name">
+      <span
+        class="form-input__error"
+        *ngIf="firstNameFC?.hasError('required') && firstNameFC?.touched">El nombre es requerido</span>
     </div>
     <div class="register__last_name form-input">
       <label class="form-input__label" for="last_name">Apellido</label>
       <input class="form-input__input" name="last_name" id="last_name" formControlName="last_name">
+      <span
+        class="form-input__error"
+        *ngIf="lastNameFC?.hasError('required') && lastNameFC?.touched">El apellido es requerido</span>
     </div>
     <div class="register__email form-input">
       <label class="form-input__label" for="email">Email</label>
