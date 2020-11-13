@@ -1,8 +1,4 @@
 interface IUser {
-  user: IUserInfo;
-}
-
-interface IUserInfo {
   'first_name': string;
   'last_name': string;
   'email': string;
@@ -12,5 +8,4 @@ interface IUserInfo {
 
 export {
   IUser,
-  IUserInfo,
 }

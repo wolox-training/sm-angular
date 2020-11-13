@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import patternPasswordValidation from 'src/app/constants/pattern-password-validation.constant';
 import IRegisterResponse from 'src/app/interfaces/register-response.interface';
-import { IUser, IUserInfo } from 'src/app/interfaces/user.interface';
+import { IUser } from 'src/app/interfaces/user.interface';
 import { UserService } from 'src/app/services/user.service';
 import passwordConfirmation from 'src/app/validators/password-confirmation.validator';
 
@@ -25,12 +25,12 @@ export class RegisterComponent{
       'email': [ null, [ Validators.required, Validators.email ] ],
       'password': [ null, [ Validators.required, Validators.pattern(patternPasswordValidation) ] ],
       'password_confirmation': [ null, [ Validators.required, passwordConfirmation() ] ],
+      'locale': [ 'es' ]
     })
   }
 
-  registerUser(user: IUserInfo) {
-    const newUser: IUser = { user }
-    this.userService.createUser(newUser).subscribe((respose: IRegisterResponse) => console.log('success', respose))
+  registerUser(user: IUser) {
+    this.userService.createUser(user).subscribe((respose: IRegisterResponse) => console.log('success', respose))
   }
 
   get firstNameFC(): FormControl {

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api: 'https://wbooks-api-stage.herokuapp.com/api/v1',
+  api: 'https://books-training-rails.herokuapp.com/api/v1',
 };
 
 /*

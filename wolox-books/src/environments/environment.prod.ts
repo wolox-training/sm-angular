@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  api: 'https://wbooks-api-stage.herokuapp.com/api/v1',
+  api: 'https://books-training-rails.herokuapp.com/api/v1',
 };
