@@ -17,6 +17,6 @@ export class UserService {
   ) { }
 
   createUser(newUser: IUser): Observable<IRegisterResponse> {
-    return this.http.post<IRegisterResponse>(this.API_URI, newUser)
+    return this.http.post<IRegisterResponse>(this.API_URI, newUser);
   }
 }
