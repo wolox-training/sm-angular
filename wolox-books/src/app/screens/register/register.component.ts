@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import patternPasswordValidation from 'src/app/constants/pattern-password-validation.constant';
-import IRegisterResponse from 'src/app/interfaces/register-response.interface';
-import { IUser } from 'src/app/interfaces/user.interface';
+import { IUserComplete } from 'src/app/interfaces/user.interface';
 import { UserService } from 'src/app/services/user.service';
 import passwordConfirmation from 'src/app/validators/password-confirmation.validator';
 
@@ -18,6 +18,7 @@ export class RegisterComponent{
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
+    private router: Router,
   ) {
     this.registerForm = fb.group({
       'first_name': [ null, [ Validators.required ] ],
@@ -29,8 +30,11 @@ export class RegisterComponent{
     })
   }
 
-  registerUser(user: IUser) {
-    this.userService.createUser(user).subscribe((respose: IRegisterResponse) => console.log('success', respose));
+  registerUser(user: IUserComplete) {
+    this.userService.createUser(user).subscribe((respose: IUserComplete) => {
+      console.log('success', respose)
+      this.router.navigate(['login'])
+    });
   }
 
   get firstNameFC(): FormControl {

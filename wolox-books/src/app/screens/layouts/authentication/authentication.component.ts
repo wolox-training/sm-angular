@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-
-type Authentication = 'register' | 'login';
+import { Component, Input } from '@angular/core';
+import { AuthenticationPath, AuthenticationContent } from 'src/app/types/authentication.types';
 
 @Component({
   selector: 'wb-authentication',
@@ -9,6 +8,7 @@ type Authentication = 'register' | 'login';
 })
 export class AuthenticationComponent {
 
-  @Input() authType: Authentication = 'register';
+  @Input() buttonPath: AuthenticationPath = '/sign-up';
+  @Input() buttonContent: AuthenticationContent = 'Sign-up';
 
 }
