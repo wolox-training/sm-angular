@@ -1,7 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-
-type Authentication = 'register' | 'login';
+import { Component, Input } from '@angular/core';
+import { AuthenticationPath, AuthenticationContent } from 'src/app/types/authentication.types';
 
 @Component({
   selector: 'wb-authentication',
@@ -10,16 +8,7 @@ type Authentication = 'register' | 'login';
 })
 export class AuthenticationComponent {
 
-  @Input() authType: Authentication = 'register';
-
-  constructor(
-    private router: Router,
-  ) { }
-
-  redirectAuth() {
-    this.authType === 'register'
-      ? this.router.navigate(['login'])
-      : this.router.navigate(['sign-up']);
-  }
+  @Input() buttonPath: AuthenticationPath = '/sign-up';
+  @Input() buttonContent: AuthenticationContent = 'Sign-up';
 
 }

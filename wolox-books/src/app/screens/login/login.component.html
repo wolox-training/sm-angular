@@ -1,4 +1,4 @@
-<wb-authentication [authType]="'login'">
+<wb-authentication [buttonPath]="'/sign-up'" [buttonContent]="'Sign-up'">
   <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)" class="login__form">
     <div class="login__email form-input">
       <label class="form-input__label" for="email">Email</label>
