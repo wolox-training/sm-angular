@@ -6,6 +6,6 @@ export interface IUserComplete extends IUserBasic {
 }
 
 export interface IUserBasic {
-  email?: string;
-  password?: string;
+  email: string;
+  password: string;
 }
