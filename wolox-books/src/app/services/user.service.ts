@@ -1,8 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { IUserBasic, IUserComplete } from '../interfaces/user.interface';
+import { IUserBasic, IUserComplete, IUserHTTPResponse } from '../interfaces/user.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +19,7 @@ export class UserService {
     return this.http.post<IUserComplete>(this.API_URI, newUser);
   }
 
-  loginUser(existingUser: IUserBasic): Observable<IUserBasic> {
-    return this.http.post<IUserBasic>(`${this.API_URI}/sign_in`, existingUser);
+  loginUser(existingUser: IUserBasic): Observable<HttpResponse<IUserHTTPResponse>> {
+    return this.http.post<IUserHTTPResponse>(`${this.API_URI}/sign_in`, existingUser, {observe: 'response'});
   }
 }
