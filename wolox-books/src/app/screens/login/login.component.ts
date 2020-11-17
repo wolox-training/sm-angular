@@ -27,8 +27,8 @@ export class LoginComponent {
 
   loginUser(user: IUserBasic) {
     this.userService.loginUser(user).subscribe((respose: IUserBasic) => {
-      console.log('success', respose)
-      this.router.navigate(['login'])
+      console.log('access_token', respose)
+      this.router.navigate(['/'])
     });
   }
 

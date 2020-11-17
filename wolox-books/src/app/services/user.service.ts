@@ -20,6 +20,6 @@ export class UserService {
   }
 
   loginUser(existingUser: IUserBasic): Observable<IUserBasic> {
-    return this.http.post<IUserBasic>(this.API_URI, existingUser);
+    return this.http.post<IUserBasic>(`${this.API_URI}/sign_in`, existingUser);
   }
 }
