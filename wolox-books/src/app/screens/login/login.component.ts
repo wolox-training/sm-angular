@@ -23,30 +23,30 @@ export class LoginComponent {
     private localStorageService: LocalStorageService,
   ) {
     this.loginForm = fb.group({
-      'email': [ null, [ Validators.required, Validators.email ] ],
-      'password': [ null, [ Validators.required, Validators.pattern(patternPasswordValidation) ] ],
-    })
+      email: [ null, [ Validators.required, Validators.email ] ],
+      password: [ null, [ Validators.required, Validators.pattern(patternPasswordValidation) ] ],
+    });
   }
 
-  loginUser(user: IUserBasic) {
+  loginUser(user: IUserBasic): void {
     this.userService.loginUser(user).subscribe((respose: HttpResponse<IUserHTTPResponse>) => {
       this.persistSession(respose);
-      this.router.navigate(['app', 'list'])
+      this.router.navigate(['app', 'list']);
     });
   }
 
   persistSession(userSession: HttpResponse<IUserHTTPResponse>): void {
-    this.localStorageService.storeOnLocalStorage('access-token', userSession.headers.get('access-token') as string)
-    this.localStorageService.storeOnLocalStorage('client', userSession.headers.get('client') as string)
-    this.localStorageService.storeOnLocalStorage('uid', userSession.headers.get('uid') as string)
+    this.localStorageService.storeOnLocalStorage('access-token', userSession.headers.get('access-token') as string);
+    this.localStorageService.storeOnLocalStorage('client', userSession.headers.get('client') as string);
+    this.localStorageService.storeOnLocalStorage('uid', userSession.headers.get('uid') as string);
   }
 
   get emailFC(): FormControl {
-    return this.loginForm.controls['email'] as FormControl;
+    return this.loginForm.controls.email as FormControl;
   }
 
   get passwordFC(): FormControl {
-    return this.loginForm.controls['password'] as FormControl;
+    return this.loginForm.controls.email as FormControl;
   }
 
 }

@@ -5,10 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class LocalStorageService {
 
-  private _keysStored: Set<string> = new Set([]);
 
-  get keysStored(): Set<string> {
-    return this._keysStored;
+  get keysStored(): string[] {
+    return Object.keys(localStorage);
   }
 
   storeOnLocalStorage(key: string, value: string): void {
@@ -16,6 +15,6 @@ export class LocalStorageService {
   }
 
   clearStorage(): void {
-    Object.keys(localStorage).forEach((key: string) => localStorage.removeItem(key))
+    Object.keys(localStorage).forEach((key: string) => localStorage.removeItem(key));
   }
 }

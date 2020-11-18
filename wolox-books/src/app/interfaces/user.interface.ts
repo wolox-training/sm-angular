@@ -11,7 +11,7 @@ export interface IUserBasic {
 }
 
 export interface IUserHTTPResponse {
-  data : {
+  data: {
     id: number;
     email: string;
     provider: string;
@@ -20,5 +20,5 @@ export interface IUserHTTPResponse {
     first_name: string;
     last_name: string;
     locale: string;
-  }
+  };
 }
