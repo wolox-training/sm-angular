@@ -30,11 +30,15 @@ export class LoginComponent {
 
   loginUser(user: IUserBasic) {
     this.userService.loginUser(user).subscribe((respose: HttpResponse<IUserHTTPResponse>) => {
-      this.localStorageService.storeOnLocalStorage('access-token', respose.headers.get('access-token') as string)
-      this.localStorageService.storeOnLocalStorage('client', respose.headers.get('client') as string)
-      this.localStorageService.storeOnLocalStorage('uid', respose.headers.get('uid') as string)
+      this.persistSession(respose);
       this.router.navigate(['app', 'list'])
     });
+  }
+
+  persistSession(userSession: HttpResponse<IUserHTTPResponse>): void {
+    this.localStorageService.storeOnLocalStorage('access-token', userSession.headers.get('access-token') as string)
+    this.localStorageService.storeOnLocalStorage('client', userSession.headers.get('client') as string)
+    this.localStorageService.storeOnLocalStorage('uid', userSession.headers.get('uid') as string)
   }
 
   get emailFC(): FormControl {
