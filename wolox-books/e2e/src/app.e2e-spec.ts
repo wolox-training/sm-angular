@@ -8,9 +8,24 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should render email and password', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('wolox-books app is running!');
+    expect(page.getEmailLabel()).toEqual('Email');
+    expect(page.getPasswordLabel()).toEqual('Password');
+  });
+
+  it('Login form should be valid', () => {
+    page.getEmailInput().sendKeys('seromarin@gmail.com');
+    page.getPasswordInput().sendKeys('Sebis1993');
+    let form = page.getForm().getAttribute('class');
+    expect(form).toContain('ng-valid');
+  });
+
+  it('Login form should be invalid', () => {
+    page.getEmailInput().sendKeys('seromarin@gmail.com');
+    page.getPasswordInput().sendKeys('1993');
+    let form = page.getForm().getAttribute('class');
+    expect(form).toContain('ng-invalid');
   });
 
   afterEach(async () => {
