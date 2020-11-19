@@ -32,7 +32,6 @@ export class RegisterComponent{
 
   registerUser(user: IUserComplete): void {
     this.userService.createUser(user).subscribe((respose: IUserComplete) => {
-      console.log('success', respose);
       this.router.navigate(['login']);
     });
   }

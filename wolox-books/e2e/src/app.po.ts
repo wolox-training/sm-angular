@@ -25,7 +25,7 @@ export class AppPage {
     return element(by.id('login-form'));
   }
 
-  getSubmitButton(): ElementFinder {
-      return element(by.id('btnSubmit'));
+  getSubmitButton(){
+      return element(by.id('btn-submit'));
   }
 }

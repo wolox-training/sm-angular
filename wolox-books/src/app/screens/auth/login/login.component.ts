@@ -20,7 +20,6 @@ export class LoginComponent {
     private fb: FormBuilder,
     private userService: UserService,
     private router: Router,
-    private localStorageService: LocalStorageService,
   ) {
     this.loginForm = fb.group({
       email: [ null, [ Validators.required, Validators.email ] ],
@@ -33,12 +32,6 @@ export class LoginComponent {
       this.persistSession(respose);
       this.router.navigate(['app', 'list']);
     });
-  }
-
-  persistSession(userSession: HttpResponse<IUserHTTPResponse>): void {
-    this.localStorageService.storeOnLocalStorage('access-token', userSession.headers.get('access-token') as string);
-    this.localStorageService.storeOnLocalStorage('client', userSession.headers.get('client') as string);
-    this.localStorageService.storeOnLocalStorage('uid', userSession.headers.get('uid') as string);
   }
 
   get emailFC(): FormControl {
