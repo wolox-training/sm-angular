@@ -5,7 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class LocalStorageService {
 
-
   get keysStored(): string[] {
     return Object.keys(localStorage);
   }

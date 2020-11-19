@@ -23,7 +23,6 @@ const routes: Routes = [
   {
     path: 'app',
     component: AppShellComponent,
-    // outlet: 'app-data',
     children: [
       {
         path: 'list',
