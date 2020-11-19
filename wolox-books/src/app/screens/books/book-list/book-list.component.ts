@@ -12,11 +12,16 @@ import { BookService } from 'src/app/services/book.service';
 export class BookListComponent {
 
   bookList$: Observable<BookResponse[]>;
+  userSearch: string = '';
 
   constructor(
     private _bookService: BookService,
   ) {
     this.bookList$ = this._bookService.getAllBooks().pipe(map((response: IAllBooksHTTPResponse) => response.page))
+  }
+
+  updateSearch(searchString: string) {
+    this.userSearch = searchString;
   }
 
 }

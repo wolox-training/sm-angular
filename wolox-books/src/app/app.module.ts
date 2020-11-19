@@ -18,6 +18,7 @@ import { AuthInterceptorService } from './interceptors/auth-interceptor.service'
 import { SearchComponent } from './components/search/search.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FilterArrayObjectByKeyValuePipe } from './pipes/filter-array-object-by-key-value.pipe';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AuthShellComponent,
     NotFoundComponent,
     SearchComponent,
-    NavbarComponent
+    NavbarComponent,
+    FilterArrayObjectByKeyValuePipe
   ],
   imports: [
     BrowserModule,
