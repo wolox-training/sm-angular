@@ -26,6 +26,6 @@ export class AppPage {
   }
 
   getSubmitButton(){
-      return element(by.id('btnSubmit'));
+      return element(by.id('btn-submit'));
   }
 }
