@@ -17,11 +17,7 @@ export class UnauthGuard implements CanActivate {
   canActivate(): boolean {
     const isUserLoggedIn = this._userService.isUserLoggedIn;
 
-    if (isUserLoggedIn) {
-      this._router.navigate(['app', 'list']);
-      return false;
-    }
-
-    return true;
+    if (isUserLoggedIn) this._router.navigate(['app', 'list']);
+    return !isUserLoggedIn;
   }
 }
