@@ -16,12 +16,8 @@ export class AuthGuard implements CanActivate {
   canActivate(): boolean {
     const isUserLogged = this._localStorageService.sessionStorage.size === sessionKeys.length;
 
-    if (isUserLogged) {
-      return true;
-    }
-
-    this._router.navigate(['/']);
-    return false;
+    if (!isUserLogged) this._router.navigate(['/']);
+    return isUserLogged;
   }
 
 }
