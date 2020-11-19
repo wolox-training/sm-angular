@@ -15,6 +15,8 @@ import { NotFoundComponent } from './screens/not-found/not-found.component';
 import { RegisterComponent } from './screens/auth/register/register.component';
 import { LoginComponent } from './screens/auth/login/login.component';
 import { AuthInterceptorService } from './interceptors/auth-interceptor.service';
+import { SearchComponent } from './components/search/search.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { AuthInterceptorService } from './interceptors/auth-interceptor.service'
     BookListComponent,
     BookDetailComponent,
     AuthShellComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SearchComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
