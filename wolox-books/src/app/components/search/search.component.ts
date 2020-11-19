@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'wb-search',
@@ -8,6 +9,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class SearchComponent{
 
   userSearch: string = '';
+  faSearch = faSearch;
 
   @Output() onUserSearch: EventEmitter<string> = new EventEmitter<string>();
 

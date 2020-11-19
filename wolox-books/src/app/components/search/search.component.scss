@@ -1,0 +1,21 @@
+@import 'colors';
+
+:host {
+  margin: 15px 0;
+}
+
+.search {
+  background-color: $light;
+  border: 1px solid $grey-dark;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  width: 375px;
+
+   &__input {
+     background-color: $light;
+     font-size: 16px;
+     width: 90%;
+   }
+}
