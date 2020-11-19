@@ -17,14 +17,14 @@ describe('workspace-project App', () => {
   it('Login form should be valid', () => {
     page.getEmailInput().sendKeys('seromarin@gmail.com');
     page.getPasswordInput().sendKeys('Sebis1993');
-    let form = page.getForm().getAttribute('class');
+    const form = page.getForm().getAttribute('class');
     expect(form).toContain('ng-valid');
   });
 
   it('Login form should be invalid', () => {
     page.getEmailInput().sendKeys('seromarin@gmail.com');
     page.getPasswordInput().sendKeys('1993');
-    let form = page.getForm().getAttribute('class');
+    const form = page.getForm().getAttribute('class');
     expect(form).toContain('ng-invalid');
   });
 
