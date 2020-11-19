@@ -16,11 +16,7 @@ export class UnauthGuard implements CanActivate {
   canActivate(): boolean {
     const isUserLogged = this._localStorageService.sessionStorage.size === sessionKeys.length;
 
-    if (isUserLogged) {
-      this._router.navigate(['app', 'list']);
-      return false;
-    }
-
-    return true;
+    if (isUserLogged) this._router.navigate(['app', 'list']);
+    return !isUserLogged;
   }
 }
