@@ -8,13 +8,9 @@
   font-family: $primary-font;
 }
 
-body {
-  background-color: $grey-light;
-}
-
 html, body {
-  flex-direction: column;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
