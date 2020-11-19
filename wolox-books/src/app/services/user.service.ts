@@ -2,6 +2,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { sessionKeys } from '../constants/session-keys.constant';
 import { IUserBasic, IUserComplete, IUserHTTPResponse } from '../interfaces/user.interface';
 import { LocalStorageService } from './local-storage.service';
 
@@ -29,5 +30,9 @@ export class UserService {
     this._localStorageService.storeOnLocalStorage('access-token', userSession.headers.get('access-token') as string);
     this._localStorageService.storeOnLocalStorage('client', userSession.headers.get('client') as string);
     this._localStorageService.storeOnLocalStorage('uid', userSession.headers.get('uid') as string);
+  }
+
+  get isUserLoggedIn(): boolean {
+    return this._localStorageService.sessionStorage.size === sessionKeys.length;
   }
 }

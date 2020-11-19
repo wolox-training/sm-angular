@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +14,7 @@ import { AuthShellComponent } from './screens/layouts/auth-shell/auth-shell.comp
 import { NotFoundComponent } from './screens/not-found/not-found.component';
 import { RegisterComponent } from './screens/auth/register/register.component';
 import { LoginComponent } from './screens/auth/login/login.component';
+import { AuthInterceptorService } from './interceptors/auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,13 @@ import { LoginComponent } from './screens/auth/login/login.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
