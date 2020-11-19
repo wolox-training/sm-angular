@@ -1,11 +1,31 @@
-import { browser, by, element } from 'protractor';
+import { browser, by, element, ElementFinder } from 'protractor';
 
 export class AppPage {
   navigateTo(): Promise<unknown> {
     return browser.get(browser.baseUrl) as Promise<unknown>;
   }
 
-  getTitleText(): Promise<string> {
-    return element(by.css('wb-root .content span')).getText() as Promise<string>;
+  getEmailLabel(): Promise<unknown> {
+    return element(by.id('email-label')).getText() as Promise<unknown>
+  }
+
+  getPasswordLabel(): Promise<unknown> {
+    return element(by.id('password-label')).getText() as Promise<unknown>
+  }
+
+  getEmailInput(): ElementFinder {
+    return element(by.name('email'));
+  }
+
+  getPasswordInput(): ElementFinder {
+    return element(by.name('password'));
+  }
+
+  getForm(){
+    return element(by.id('login-form'));
+  }
+
+  getSubmitButton(){
+      return element(by.id('btn-submit'));
   }
 }

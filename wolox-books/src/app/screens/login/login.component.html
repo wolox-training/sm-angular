@@ -1,7 +1,7 @@
 <wb-authentication [buttonPath]="'/sign-up'" [buttonContent]="'Sign-up'">
-  <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)" class="login__form">
+  <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)" id="login-form" class="login__form">
     <div class="login__email form-input">
-      <label class="form-input__label" for="email">Email</label>
+      <label id="email-label" class="form-input__label" for="email">Email</label>
       <input class="form-input__input" type="email" name="email" id="email" formControlName="email">
       <span class="form-input__error" *ngIf="emailFC?.hasError('required') && emailFC?.touched">
         El email es requerido
@@ -13,7 +13,7 @@
       </span>
     </div>
     <div class="login__password form-input">
-      <label class="form-input__label" for="password">Password</label>
+      <label id="password-label" class="form-input__label" for="password">Password</label>
       <input class="form-input__input" type="password" name="password" id="password" formControlName="password">
       <span
         class="form-input__error"
@@ -26,6 +26,6 @@
         El password debe tener al menos 1 letra mayuscula y 1 numero
       </span>
     </div>
-    <button type="submit" class="primary-action" [disabled]="!loginForm.valid">Login</button>
+    <button type="submit" class="btn-submit primary-action" [disabled]="!loginForm.valid">Login</button>
   </form>
 </wb-authentication>

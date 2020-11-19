@@ -21,39 +21,38 @@ export class RegisterComponent{
     private router: Router,
   ) {
     this.registerForm = fb.group({
-      'first_name': [ null, [ Validators.required ] ],
-      'last_name': [ null, [ Validators.required ] ],
-      'email': [ null, [ Validators.required, Validators.email ] ],
-      'password': [ null, [ Validators.required, Validators.pattern(patternPasswordValidation) ] ],
-      'password_confirmation': [ null, [ Validators.required, passwordConfirmation() ] ],
-      'locale': [ 'es' ]
-    })
+      first_name: [ null, [ Validators.required ] ],
+      last_name: [ null, [ Validators.required ] ],
+      email: [ null, [ Validators.required, Validators.email ] ],
+      password: [ null, [ Validators.required, Validators.pattern(patternPasswordValidation) ] ],
+      password_confirmation: [ null, [ Validators.required, passwordConfirmation() ] ],
+      locale: [ 'es' ]
+    });
   }
 
-  registerUser(user: IUserComplete) {
+  registerUser(user: IUserComplete): void {
     this.userService.createUser(user).subscribe((respose: IUserComplete) => {
-      console.log('success', respose)
-      this.router.navigate(['login'])
+      this.router.navigate(['login']);
     });
   }
 
   get firstNameFC(): FormControl {
-    return this.registerForm.controls['first_name'] as FormControl;
+    return this.registerForm.controls.first_name as FormControl;
   }
 
   get lastNameFC(): FormControl {
-    return this.registerForm.controls['last_name'] as FormControl;
+    return this.registerForm.controls.last_name as FormControl;
   }
 
   get emailFC(): FormControl {
-    return this.registerForm.controls['email'] as FormControl;
+    return this.registerForm.controls.email as FormControl;
   }
 
   get passwordFC(): FormControl {
-    return this.registerForm.controls['password'] as FormControl;
+    return this.registerForm.controls.password as FormControl;
   }
 
   get passwordConfirmationFC(): FormControl {
-    return this.registerForm.controls['password_confirmation'] as FormControl;
+    return this.registerForm.controls.password_confirmation as FormControl;
   }
 }

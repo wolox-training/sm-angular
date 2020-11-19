@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { Router } from '@angular/router';
 import patternPasswordValidation from 'src/app/constants/pattern-password-validation.constant';
 import { IUserBasic, IUserHTTPResponse } from 'src/app/interfaces/user.interface';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -21,26 +22,24 @@ export class LoginComponent {
     private router: Router,
   ) {
     this.loginForm = fb.group({
-      'email': [ null, [ Validators.required, Validators.email ] ],
-      'password': [ null, [ Validators.required, Validators.pattern(patternPasswordValidation) ] ],
-    })
+      email: [ null, [ Validators.required, Validators.email ] ],
+      password: [ null, [ Validators.required, Validators.pattern(patternPasswordValidation) ] ],
+    });
   }
 
-  loginUser(user: IUserBasic) {
+  loginUser(user: IUserBasic): void {
     this.userService.loginUser(user).subscribe((respose: HttpResponse<IUserHTTPResponse>) => {
-      const keys = respose.headers.keys();
-      const headers = keys.map(key => `${key}: ${respose.headers.get(key)}`);
-      console.log('access-token', respose.headers.get('access-token'))
-      this.router.navigate(['/'])
+      this.persistSession(respose);
+      this.router.navigate(['app', 'list']);
     });
   }
 
   get emailFC(): FormControl {
-    return this.loginForm.controls['email'] as FormControl;
+    return this.loginForm.controls.email as FormControl;
   }
 
   get passwordFC(): FormControl {
-    return this.loginForm.controls['password'] as FormControl;
+    return this.loginForm.controls.email as FormControl;
   }
 
 }
