@@ -8,8 +8,8 @@ export const initialState: IBooksResponse[] = [];
 
 export const reducer = createReducer(
   initialState,
-  on(addBooks, (state, { bookCart }) => ([...state, bookCart])),
-  // on(removeBooks, (state) => state - 1),
-  // on(resetCart, (state) => 0)
+  on(addBooks, (state, newBook) => ([...state, newBook])),
+  on(removeBooks, (state, newBook) => (state.filter((bookState: IBooksResponse) => bookState.id !== newBook.id))),
+  on(resetCart, (state) => [])
 );
 
