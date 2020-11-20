@@ -9,11 +9,11 @@ import { LocalStorageService } from 'src/app/services/local-storage.service';
 export class AppShellComponent {
 
   constructor(
-    private localStorageService: LocalStorageService,
+    private _localStorageService: LocalStorageService,
   ) { }
 
   logout(): void {
-    this.localStorageService.clearStorage();
+    this._localStorageService.clearStorage();
   }
 
 }

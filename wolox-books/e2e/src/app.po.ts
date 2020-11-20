@@ -6,11 +6,11 @@ export class AppPage {
   }
 
   getEmailLabel(): Promise<unknown> {
-    return element(by.id('email-label')).getText() as Promise<unknown>
+    return element(by.id('email-label')).getText() as Promise<unknown>;
   }
 
   getPasswordLabel(): Promise<unknown> {
-    return element(by.id('password-label')).getText() as Promise<unknown>
+    return element(by.id('password-label')).getText() as Promise<unknown>;
   }
 
   getEmailInput(): ElementFinder {
@@ -21,7 +21,7 @@ export class AppPage {
     return element(by.name('password'));
   }
 
-  getForm(){
+  getForm(): ElementFinder {
     return element(by.id('login-form'));
   }
 

@@ -17,20 +17,20 @@ export class LoginComponent {
   loginForm: FormGroup;
 
   constructor(
-    private fb: FormBuilder,
-    private userService: UserService,
-    private router: Router,
+    private _fb: FormBuilder,
+    private _userService: UserService,
+    private _router: Router,
   ) {
-    this.loginForm = fb.group({
+    this.loginForm = _fb.group({
       email: [ null, [ Validators.required, Validators.email ] ],
       password: [ null, [ Validators.required, Validators.pattern(patternPasswordValidation) ] ],
     });
   }
 
   loginUser(user: IUserBasic): void {
-    this.userService.loginUser(user).subscribe((respose: HttpResponse<IUserHTTPResponse>) => {
-      this.persistSession(respose);
-      this.router.navigate(['app', 'list']);
+    this._userService.loginUser(user).subscribe((respose: HttpResponse<IUserHTTPResponse>) => {
+      this._userService.persistSession(respose);
+      this._router.navigate(['app', 'list']);
     });
   }
 

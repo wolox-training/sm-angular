@@ -13,21 +13,21 @@ export class UserService {
   private readonly API_URI: string = `${environment.api}/users`;
 
   constructor(
-    private http: HttpClient,
-    private localStorageService: LocalStorageService,
+    private _http: HttpClient,
+    private _localStorageService: LocalStorageService,
   ) { }
 
   createUser(newUser: IUserComplete): Observable<IUserComplete> {
-    return this.http.post<IUserComplete>(this.API_URI, newUser);
+    return this._http.post<IUserComplete>(this.API_URI, newUser);
   }
 
   loginUser(existingUser: IUserBasic): Observable<HttpResponse<IUserHTTPResponse>> {
-    return this.http.post<IUserHTTPResponse>(`${this.API_URI}/sign_in`, existingUser, {observe: 'response'});
+    return this._http.post<IUserHTTPResponse>(`${this.API_URI}/sign_in`, existingUser, {observe: 'response'});
   }
 
   persistSession(userSession: HttpResponse<IUserHTTPResponse>): void {
-    this.localStorageService.storeOnLocalStorage('access-token', userSession.headers.get('access-token') as string);
-    this.localStorageService.storeOnLocalStorage('client', userSession.headers.get('client') as string);
-    this.localStorageService.storeOnLocalStorage('uid', userSession.headers.get('uid') as string);
+    this._localStorageService.storeOnLocalStorage('access-token', userSession.headers.get('access-token') as string);
+    this._localStorageService.storeOnLocalStorage('client', userSession.headers.get('client') as string);
+    this._localStorageService.storeOnLocalStorage('uid', userSession.headers.get('uid') as string);
   }
 }

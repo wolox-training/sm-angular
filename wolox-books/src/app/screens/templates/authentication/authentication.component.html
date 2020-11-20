@@ -1,5 +1,5 @@
 <div class="authentication">
   <img class="authentication__logo" src="/assets/images/logo-wolox.png" alt="Logo Wolox">
   <ng-content select="form"></ng-content>
-  <a class="secondary-action" [routerLink]="[buttonPath]">{{ buttonContent }}</a>
+  <a class="secondary-action" [routerLink]="[authPath + buttonPath]">{{ buttonContent }}</a>
 </div>

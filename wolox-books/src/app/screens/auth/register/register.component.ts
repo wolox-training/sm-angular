@@ -16,11 +16,11 @@ export class RegisterComponent{
   registerForm: FormGroup;
 
   constructor(
-    private fb: FormBuilder,
-    private userService: UserService,
-    private router: Router,
+    private _fb: FormBuilder,
+    private _userService: UserService,
+    private _router: Router,
   ) {
-    this.registerForm = fb.group({
+    this.registerForm = _fb.group({
       first_name: [ null, [ Validators.required ] ],
       last_name: [ null, [ Validators.required ] ],
       email: [ null, [ Validators.required, Validators.email ] ],
@@ -31,8 +31,8 @@ export class RegisterComponent{
   }
 
   registerUser(user: IUserComplete): void {
-    this.userService.createUser(user).subscribe((respose: IUserComplete) => {
-      this.router.navigate(['login']);
+    this._userService.createUser(user).subscribe((respose: IUserComplete) => {
+      this._router.navigate(['login']);
     });
   }
 
