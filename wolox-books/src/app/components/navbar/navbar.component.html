@@ -1,4 +1,12 @@
 <nav id="nav" class="nav">
   <img src="/assets/images/logo-wolox.png" alt="Logo Wolox" class="nav__logo">
-  <a [routerLink]="['/']" class="nav__logout" (click)="logout()">Logout</a>
+  <div class="nav__right">
+    <div class="shopping-cart">
+      <fa-icon size="lg" [icon]="faShoppingCart"></fa-icon>
+      <div class="shopping-cart__counter">
+        <span>{{ (currentBooksOnCart$ | async)?.length }}</span>
+      </div>
+    </div>
+    <a [routerLink]="['/']" class="nav__logout" (click)="logout()">Logout</a>
+  </div>
 </nav>
