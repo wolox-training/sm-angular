@@ -7,6 +7,9 @@ import { IBooksResponse } from 'src/app/interfaces/book.interface';
 import { Store } from '@ngrx/store';
 import { State } from 'src/app/store';
 
+import { MatDialog } from '@angular/material/dialog';
+import { BookCartComponent } from 'src/app/screens/templates/book-cart/book-cart.component';
+
 @Component({
   selector: 'wb-navbar',
   templateUrl: './navbar.component.html',
@@ -22,11 +25,18 @@ export class NavbarComponent implements OnInit {
     private _localStorageService: LocalStorageService,
     private _bookService: BookService,
     private _store: Store<State>,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
     this.currentBooksOnCart$ = this._bookService.bookCart;
     this.currentBooksOnStoreCart$ = this._store.select('book');
+  }
+
+  openCart() {
+    const dialogRef = this.dialog.open(BookCartComponent, {
+      width: '750px',
+    });
   }
 
   logout(): void {

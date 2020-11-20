@@ -1,0 +1,27 @@
+<div class="book-cart">
+  <h2 mat-dialog-title class="book-cart__title">Tu carrito de compras</h2>
+  <mat-dialog-content class="mat-typography">
+    <ng-container *ngIf="(bookStoreCart$ | async)?.length !== 0; else noBooksSelected">
+      <ng-container *ngIf="bookStoreCart$ | async as books">
+        <table class="book-list">
+          <tr>
+            <th *ngFor="let column of bookCartColumns">{{ column | titlecase }}</th>
+          </tr>
+          <tr *ngFor="let book of books">
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>
+              <fa-icon (click)="removeBookStoreCart(book)" [icon]="faTrashAlt" [styles]="{'color': 'red'}"></fa-icon>
+            </td>
+          </tr>
+        </table>
+      </ng-container>
+    </ng-container>
+    <ng-template #noBooksSelected>
+      <h2>No books here</h2>
+    </ng-template>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button class="book-cart__cancel" mat-button mat-dialog-close>Cancel</button>
+  </mat-dialog-actions>
+</div>
