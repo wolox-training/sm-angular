@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 import { sessionKeys } from '../constants/session-keys.constant';
 import { LocalStorageService } from '../services/local-storage.service';
+import { UserService } from '../services/user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,13 +11,13 @@ export class AuthGuard implements CanActivate {
 
   constructor(
     private _router: Router,
-    private _localStorageService: LocalStorageService,
+    private _userService: UserService
   ) { }
 
   canActivate(): boolean {
-    const isUserLogged = this._localStorageService.sessionStorage.size === sessionKeys.length;
+    const isUserLoggedIn = this._userService.isUserLoggedIn;
 
-    if (!isUserLogged) this._router.navigate(['/']);
-    return isUserLogged;
+    if (!isUserLoggedIn) this._router.navigate(['/']);
+    return isUserLoggedIn;
   }
 }
