@@ -19,6 +19,13 @@ import { SearchComponent } from './components/search/search.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FilterArrayObjectByKeyValuePipe } from './pipes/filter-array-object-by-key-value.pipe';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BookCartComponent } from './screens/templates/book-cart/book-cart.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -33,7 +40,8 @@ import { FilterArrayObjectByKeyValuePipe } from './pipes/filter-array-object-by-
     NotFoundComponent,
     SearchComponent,
     NavbarComponent,
-    FilterArrayObjectByKeyValuePipe
+    FilterArrayObjectByKeyValuePipe,
+    BookCartComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +50,12 @@ import { FilterArrayObjectByKeyValuePipe } from './pipes/filter-array-object-by-
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    StoreModule.forRoot(reducers, { metaReducers }),
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    BrowserAnimationsModule,
+    MatDialogModule,
   ],
   providers: [
     {

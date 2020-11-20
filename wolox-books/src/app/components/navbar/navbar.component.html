@@ -1,10 +1,10 @@
 <nav id="nav" class="nav">
   <img src="/assets/images/logo-wolox.png" alt="Logo Wolox" class="nav__logo">
   <div class="nav__right">
-    <div class="shopping-cart">
+    <div mat-button (click)="openCart()" class="shopping-cart">
       <fa-icon size="lg" [icon]="faShoppingCart"></fa-icon>
       <div class="shopping-cart__counter">
-        <span>{{ (currentBooksOnCart$ | async)?.length }}</span>
+        <span>{{ (currentBooksOnStoreCart$ | async)?.length }}</span>
       </div>
     </div>
     <a [routerLink]="['/']" class="nav__logout" (click)="logout()">Logout</a>
