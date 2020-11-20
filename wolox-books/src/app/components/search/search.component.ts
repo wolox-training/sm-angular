@@ -8,12 +8,12 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 })
 export class SearchComponent{
 
-  userSearch: string = '';
+  userSearch = '';
   faSearch = faSearch;
 
-  @Output() onUserSearch: EventEmitter<string> = new EventEmitter<string>();
+  @Output() textSearch: EventEmitter<string> = new EventEmitter<string>();
 
   emitUserInput(evt: KeyboardEvent): void {
-    this.onUserSearch.emit((evt.target as HTMLInputElement).value as string)
+    this.textSearch.emit((evt.target as HTMLInputElement).value as string);
   }
 }

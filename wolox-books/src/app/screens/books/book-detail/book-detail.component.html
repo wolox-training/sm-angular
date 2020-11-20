@@ -1,2 +1,30 @@
-<p>book-detail works!</p>
-<a routerLink="/app/list">List</a>
+<ng-container *ngIf="(bookDetailData$ | async) as book; else elseTemplate">
+  <div class="container-detail content">
+    <a class="back-button" routerLink="/app/books">Atras</a>
+    <div id="detail" class="detail">
+      <div class="detail__cover">
+        <img class="detail__cover-img" [src]="book.image_url" alt="Book Wolox Cover">
+        <img *ngIf="book.author === bestSellerAuthor" class="detail__cover-badge" src="/assets/images/badge.png" alt="Book Badge">
+      </div>
+      <h2 class="detail__book-title">{{ book.title }}</h2>
+      <p class="detail__book-genre">({{ book.genre }})</p>
+      <div class="detail__info">
+        <div class="detail__author">
+          <h3 class="detail__author-title">Autor del libro:</h3>
+          <p class="detail__author-content">{{ book.author }}</p>
+        </div>
+        <div class="detail__editorial">
+          <h3 class="detail__editorial-title">Editorial:</h3>
+          <p class="detail__editorial-content">{{ book.editor }}</p>
+        </div>
+        <div class="detail__year">
+          <h3 class="detail__year-title">Año de publicación:</h3>
+          <p class="detail__year-content">{{ book.year }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-template #elseTemplate>
+  <span>Loading...</span>
+</ng-template>
