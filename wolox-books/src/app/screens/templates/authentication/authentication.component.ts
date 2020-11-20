@@ -8,6 +8,8 @@ import { AuthenticationPath, AuthenticationContent } from 'src/app/types/authent
 })
 export class AuthenticationComponent {
 
+  readonly authPath: string = '/auth';
+
   @Input() buttonPath: AuthenticationPath = '/sign-up';
   @Input() buttonContent: AuthenticationContent = 'Sign-up';
 
