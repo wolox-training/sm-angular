@@ -42,11 +42,16 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       {
-        path: 'list',
+        path: '',
+        redirectTo: '/app/books',
+        pathMatch: 'full'
+      },
+      {
+        path: 'books',
         component: BookListComponent
       },
       {
-        path: 'detail',
+        path: 'books/:id',
         component: BookDetailComponent
       }
     ]

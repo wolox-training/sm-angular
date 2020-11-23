@@ -30,7 +30,7 @@ export class LoginComponent {
   loginUser(user: IUserBasic): void {
     this._userService.loginUser(user).subscribe((respose: HttpResponse<IUserHTTPResponse>) => {
       this._userService.persistSession(respose);
-      this._router.navigate(['app', 'list']);
+      this._router.navigate(['app', 'books']);
     });
   }
 
