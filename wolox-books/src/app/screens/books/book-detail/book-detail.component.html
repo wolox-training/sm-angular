@@ -3,7 +3,7 @@
     <a class="back-button" routerLink="/app/books">Atras</a>
     <div id="detail" class="detail">
       <div class="detail__cover">
-        <img class="detail__cover-img" [src]="book.image_url" alt="Book Wolox Cover">
+        <img class="detail__cover-img" [src]="book.image_url" [alt]="book.title">
         <img *ngIf="book.author === bestSellerAuthor" class="detail__cover-badge" src="/assets/images/badge.png" alt="Book Badge">
       </div>
       <h2 class="detail__book-title">{{ book.title }}</h2>
