@@ -40,6 +40,27 @@
       font-size: 20px;
     }
   }
-
 }
 
+.empty-cart {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 25px 0;
+
+  &__image {
+    margin: 15px 0;
+    width: 350px;
+  }
+
+  &__message {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+
+  &__title {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 20px 0;
+  }
+}
