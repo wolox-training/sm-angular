@@ -1,10 +1,19 @@
 <div class="container-list content">
   <wb-search (textSearch)="updateSearch($event)"></wb-search>
   <div id="book-list" class="book-list">
-    <a class="book" *ngFor="let book of bookList$ | async | filterArrayObjectByKeyValue:'title':userSearch" routerLink="/app/books/{{ book.id }}">
-      <img class="book__cover" [src]="book.image_url" alt="Book Cover">
-      <h2 class="book__title">{{ book.title }}</h2>
-      <h4 class="book__author">{{ book.author }}</h4>
-    </a>
+    <div class="book-container" *ngFor="let book of bookList$ | async | filterArrayObjectByKeyValue:'title':userSearch" >
+      <a class="book" routerLink="/app/books/{{ book.id }}">
+        <img class="book__cover" [src]="book.image_url" alt="Book Cover">
+        <h2 class="book__title">{{ book.title }}</h2>
+        <h4 class="book__author">{{ book.author }}</h4>
+      </a>
+      <fa-icon
+        class="book-container__add"
+        size="3x"
+        [icon]="faPlusCircle"
+        [styles]="{'color': '#BED23C'}"
+        (click)="addBookToCart(book)">
+      </fa-icon>
+    </div>
   </div>
 </div>
