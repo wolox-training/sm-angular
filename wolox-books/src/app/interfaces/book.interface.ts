@@ -1,3 +1,5 @@
+import { GeneralObject } from "./general-object.interface";
+
 export interface IAllBooksHTTPResponse {
   count: number;
   current_page: number;
@@ -7,7 +9,7 @@ export interface IAllBooksHTTPResponse {
   total_pages: number;
 }
 
-export interface BookResponse {
+export interface BookResponse extends GeneralObject {
   author: string;
   created_at: string;
   editor: string;

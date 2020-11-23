@@ -1,0 +1,9 @@
+<div id="search" class="search">
+  <input
+     type="text"
+     class="search__input"
+     placeholder="Buscá por título del libro..."
+     [(ngModel)]="userSearch"
+     (keyup)="emitUserInput($event)" />
+  <fa-icon [icon]="faSearch"></fa-icon>
+</div>
