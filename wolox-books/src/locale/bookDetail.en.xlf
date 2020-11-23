@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="2a442753a56c5f8c3259c6ee6cf12eb37fa9c96a" datatype="html">
+        <source>Atras</source>
+        <target>Go back</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screens/books/book-detail/book-detail.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">Go back to book list</note>
+        <note priority="1" from="meaning">back button</note>
+      </trans-unit>
+      <trans-unit id="5c5fef32e6a78c575a4b6137dd4bfe2e30aad26b" datatype="html">
+        <source>Autor del libro:</source>
+        <target>Author of the book:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screens/books/book-detail/book-detail.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <note priority="1" from="description">The author of the current book</note>
+        <note priority="1" from="meaning">book author</note>
+      </trans-unit>
+      <trans-unit id="e0b2dd00293909d4cc18d70a9ab3d777af47db67" datatype="html">
+        <source>Editorial:</source>
+        <target>Publisher:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screens/books/book-detail/book-detail.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <note priority="1" from="description">The editorial of the current book</note>
+        <note priority="1" from="meaning">book editorial</note>
+      </trans-unit>
+      <trans-unit id="f7f5a7abcda1da4c16969d4fffbe13db74b31777" datatype="html">
+        <source>Año de publicación:</source>
+        <target>Release Date:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screens/books/book-detail/book-detail.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <note priority="1" from="description">The year of publication of the current book</note>
+        <note priority="1" from="meaning">book year</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
