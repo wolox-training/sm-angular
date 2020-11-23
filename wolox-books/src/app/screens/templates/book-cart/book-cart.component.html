@@ -18,7 +18,11 @@
       </ng-container>
     </ng-container>
     <ng-template #noBooksSelected>
-      <h2>No books here</h2>
+      <div class="empty-cart">
+        <img class="empty-cart__image" src="/assets/images/cart.png" />
+        <h2 class="empty-cart__title">El carrito esta vacio</h2>
+        <p class="empty-cart__message">Parece que no tienes items en tu carrito de compras</p>
+      </div>
     </ng-template>
   </mat-dialog-content>
   <mat-dialog-actions align="end">
