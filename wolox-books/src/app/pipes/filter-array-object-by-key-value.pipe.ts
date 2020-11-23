@@ -7,7 +7,7 @@ import { BookResponse } from '../interfaces/book.interface';
 export class FilterArrayObjectByKeyValuePipe implements PipeTransform {
 
   transform(arrayObject: BookResponse[] | null, key: string, value: string): BookResponse[] | null {
-    if (!arrayObject || arrayObject.length === 0) return arrayObject;
+    if (!arrayObject || !arrayObject.length) return arrayObject;
     return arrayObject.filter((book: BookResponse) => book[key].toString().toLowerCase().includes(value.toLowerCase()));
   }
 
